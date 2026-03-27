@@ -27,7 +27,3 @@ app.get('/destino', function(req, res) {
   const sorteado = destinos[Math.floor(Math.random() * destinos.length)];
   res.json(sorteado);
 });
-
-app.listen(3000, function() {
-  console.log('Servidor rodando em http://localhost:3000');
-});
