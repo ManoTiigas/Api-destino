@@ -1,10 +1,3 @@
-const express = require('express');
-const cors = require('cors');
-const app = express();
-
-app.use(cors());
-app.use(express.static('.'));
-
 const destinos = [
   { nome: 'Ilha de Páscoa', pais: 'Chile', imagem: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Moai_Rano_raraku.jpg/1280px-Moai_Rano_raraku.jpg' },
   { nome: 'Monte Fuji', pais: 'Japão', imagem: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/080103_hakkai_fuji.jpg/1280px-080103_hakkai_fuji.jpg' },
@@ -23,7 +16,7 @@ const destinos = [
   { nome: 'Fernando de Noronha', pais: 'Brasil', imagem: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Fernando_de_Noronha_-_PE_-_Brazil.jpg/1280px-Fernando_de_Noronha_-_PE_-_Brazil.jpg' },
 ];
 
-app.get('/destino', function(req, res) {
+module.exports = function(req, res) {
   const sorteado = destinos[Math.floor(Math.random() * destinos.length)];
   res.json(sorteado);
-});
+};
