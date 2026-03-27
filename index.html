@@ -69,7 +69,7 @@
     function girar() {
       document.getElementById('resultado').innerHTML = '<p>Carregando...</p>';
 
-      fetch('http://localhost:3000/destino')
+      fetch('/api/destino')
         .then(r => r.json())
         .then(dados => {
           document.getElementById('resultado').innerHTML = `
